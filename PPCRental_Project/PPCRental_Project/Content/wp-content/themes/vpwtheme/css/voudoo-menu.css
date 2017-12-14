@@ -1,0 +1,131 @@
+
+
+nav {
+  display: block;
+  padding-bottom:8px; padding-top:5px;
+
+
+}
+
+#voudoo-menu ul{padding:3px 3px 3px 10px; border-radius:5px;}
+
+#voudoo-menu ul li { list-style: none; }
+
+#voudoo-menu ul li { float: left;  }
+
+#voudoo-menu ul li a {
+  font-family: Calibri;
+  font-size:20px;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  padding:7px 5px 7px 5px;
+  margin:0 5px;
+  text-transform:uppercase;  
+  color:#595959;
+  font:normal 15px Calibri;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+
+
+}
+
+#voudoo-menu ul:first-child li a:hover,#voudoo-menu ul li a.selected {
+color:#fff;
+  border-bottom:3px solid #97e329;
+
+  
+  
+}
+
+#voudoo-menu ul li ul li { float: none; }
+
+#voudoo-menu ul li ul li a {
+  background-color: #ecf0f1;
+  color: #595959;
+}
+
+
+.mn_spec{margin-left:270px }
+
+
+#voudoo-menu ul li ul {
+  display: none;
+  position: absolute;
+}
+
+#voudoo-menu-toggle {
+  width: 12%;
+  display: none;
+  position: absolute;
+  z-index: 100000;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#voudoo-menu-toggle div {
+  height: 7px;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-bottom: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: inset 1px 1px 2px 0px #fff;
+  -webkit-box-shadow: inset 1px 1px 2px 0px #fff;
+  box-shadow: inset 1px 1px 2px 0px #fff;
+}
+
+#voudoo-menu-toggle div:last-child { margin-bottom: 0; }
+
+/************************************************************************************
+    *
+    * Media Queries
+    * Mobile View
+    *
+ ***********************************************************************************/
+ 
+
+
+ @media only screen and (max-width: 1150px){
+	#voudoo-menu ul li a{ margin:0 1px; padding:9px 7px; }
+}
+ 
+
+@media (max-width: 1000px) {
+
+#voudoo-menu-toggle { display: inherit; background-color:#8ba369; padding:8px; border-radius:4px; }
+
+#voudoo-menu {
+  display: none;
+  width: 65%;
+  position: fixed;
+  right: 0;
+  background-color: #3f6c0a;
+  z-index:100;
+  top:53px !important;
+  z-index:100;
+}
+
+#voudoo-menu ul li { float: none; }
+
+#voudoo-menu ul li a { position: initial; }
+
+#voudoo-menu ul li ul { position: initial; }
+}
+
+
+@media (max-width: 500px) {
+
+#voudoo-menu-toggle { padding:5px; }
+
+#voudoo-menu {
+
+}
+
+}
+
+

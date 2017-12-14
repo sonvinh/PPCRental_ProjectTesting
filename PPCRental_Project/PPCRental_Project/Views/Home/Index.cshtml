@@ -1,0 +1,286 @@
+﻿@model IEnumerable<object>
+@{
+    List<PPCRental_Project.Models.PROPERTY> lstProperty = Model.ToList()[0] as List<PPCRental_Project.Models.PROPERTY>;
+    List<PPCRental_Project.Models.DISTRICT> lstDistrict = Model.ToList()[1] as List<PPCRental_Project.Models.DISTRICT>;
+    List<PPCRental_Project.Models.STREET> lstStreet = Model.ToList()[2] as List<PPCRental_Project.Models.STREET>;
+    List<PPCRental_Project.Models.WARD> lstWard = Model.ToList()[3] as List<PPCRental_Project.Models.WARD>;
+    List<PPCRental_Project.Models.PROPERTY_TYPE> lstType = Model.ToList()[4] as List<PPCRental_Project.Models.PROPERTY_TYPE>;
+    int max = 9;
+    int page = (int)ViewBag.Page;
+    lstProperty = lstProperty.Skip((page - 1) * max).Take(max).ToList();
+}
+
+@{
+    ViewBag.Title = "PPC Rental Website";
+}
+
+<!--Slider Bootstrap-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img class="img-rounded img-responsive" src="~/Images/1.jpg" /> 
+        </div>
+        <div class="item">
+            <img class="img-rounded img-responsive" src="~/Images/2.jpg" />  
+        </div>
+        <div class="item">
+            <img class="img-rounded img-responsive" src="~/Images/3.jpg" />
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--End Slider Bootstrap-->
+
+<div class="container" id="viewandfilter">
+    <!--View List-->
+    <div class="col-sm-9 ">
+        <div class="row">
+
+            @foreach (var item in lstProperty.Where(x=>x.Status_ID==3))
+            {
+                <div class="col-sm-6 col-md-4 wow slideInLeft">
+                    <div class="thumbnail projectcomponent">
+                        <img class="img-rounded img-responsive display-img" src="@Url.Content(item.Avatar)" alt="@item.PropertyName">
+                        <div class="caption">
+                            <!--Boundary of project title-->
+                            <div class="thumbnail-title">
+                                @if (@item.PropertyName.Length > 36)
+                                {
+                                    <h4>@item.PropertyName.Substring(0, 36)...</h4>
+                                }
+                                else
+                                {
+                                    <h4>@item.PropertyName</h4>
+                                }
+                            </div>
+                            <!--End Boundary of project title-->
+                            <!--Boundary of project short content-->
+                            <div class="thumbnail-content">
+                                <!--Boundary of price-->
+                                <p class="display-price">
+                                    <span class="glyphicons glyphicons-money"></span>
+                                    @item.Price @item.UnitPrice
+                                </p>
+                                <!--End Boundary of price-->
+                                <!--Boundary of content-->
+                                <p class="display-content">
+                                    @if (@item.Content.Length > 90)
+                                    {
+                                        @item.Content.Substring(0, 90)
+                                    }
+                                    else
+                                    {
+                                        @item.Content
+                                    }
+
+                                </p>
+                                <!--End Boundary of content-->
+
+                                <p>
+                                    <span class="glyphicon glyphicon-home"></span>   @item.DISTRICT.DistrictName, @item.WARD.WardName, @item.STREET.StreetName
+                                </p>
+                            </div>
+                            <!--End Boundary of project short content-->
+                            <!--Boundary of Detail button-->
+                            <div class="thumbnail-footer">
+                                <a href="~/Project/Detail/@item.ID" class="btn btn-primary" role="button" id="btn-detail">Xem chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+        <!-- Pagination-->
+            @if (page == 1)
+            {
+                <div class="pagina-align">
+                    <ul class="pagination">
+                        <li class="disabled" onclick="AlertClick"><a href="#">Previous</a></li>
+                        <li class="active"><a href="@Url.Action("Index", new { page = page })">1</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">2</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 2 })">3</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 3 })">4</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 4 })">5</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">Next</a></li>
+                    </ul>
+                </div>
+            }
+            @if (page == 2)
+            {
+                <div class="pagina-align">
+                    <ul class="pagination">
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">Previous</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page -1 })">1</a></li>
+                        <li class="active"><a href="@Url.Action("Index", new { page = page })">2</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">3</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 2 })">4</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 3 })">5</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">Next</a></li>
+                    </ul>
+                </div>
+            }
+            @if (page == 3)
+            {
+                 <div class="pagina-align">
+                    <ul class="pagination">
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">Previous</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 2   })">1</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">2</a></li>
+                        <li class="active"><a href="@Url.Action("Index", new { page = page })">3</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">4</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 2 })">5</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">Next</a></li>
+                    </ul>
+                </div>
+            }
+            @if (page == 4)
+            {
+                <div class="pagina-align">
+                    <ul class="pagination">
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">Previous</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 3 })">1</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 2 })">2</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">3</a></li>
+                        <li class="active"><a href="@Url.Action("Index", new { page = page })">4</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">5</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page + 1 })">Next</a></li>
+                    </ul>
+                </div>
+            }
+            @if (page == 5)
+            {
+                <div class="pagina-align">
+                    <ul class="pagination">
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">Previous</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 4 })">1</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 3 })">2</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 2 })">3</a></li>
+                        <li class="waves-effect"><a href="@Url.Action("Index", new { page = page - 1 })">4</a></li>
+                        <li class="active"><a href="@Url.Action("Index", new { page = page  })">5</a></li>
+                        <li class="disabled" onclick="AlertClick"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            }
+            <script>
+                function AlertClick() {
+                    alert("Số Trang Đã Đạt Giới Hạn");
+                }
+            </script>
+            <!-- End Pagination-->
+        </div>
+    <!--Filter-->
+    <form role="search" action="@Url.Action("Search","Project")" method="get">
+
+        <div class="col-sm-3 wow slideInRight">
+            <!--Filter Header-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>Filter</h3>
+                </div>
+                <!--End Filter Header-->
+                <!--Filter Boby-->
+                <div class="panel-body">
+                    <!--District Filter-->
+                    <select name="district" class="dropdown col-md-12 component_filter" id="test">
+                        <option selected value="0">--Chọn Quận--</option>
+                        @foreach (var item in lstDistrict)
+                        {
+                            if (item.ID >= 31 && item.ID <= 54)
+                            {
+                                <option value="@item.ID">@item.DistrictName</option>
+                            }
+                        }
+                    </select>
+                    <!--End District Filter-->
+                    <!--Type Filter-->
+                    <select name="PropertyType" class="dropdown col-md-12 component_filter">
+                        <option selected value="0">--Chọn Loại Dự Án</option>
+                        @foreach (var item in lstType)
+                        {
+                            <option value="@item.ID">@item.CodeType</option>
+                        }
+                    </select>
+                    <!--End Type Filter-->
+                    <!--Bedroom Filter-->
+                    <select name="BedRoom" class="dropdown col-md-12 component_filter">
+                        <option value="0" selected>--Chọn Số Phòng Ngủ--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <!--End Bedroom Filter-->
+                    <!--Bathroom Filter-->
+                    <select name="BathRoom" class="dropdown col-md-12 component_filter">
+                        <option value="0" selected>--Chọn Số Phòng Tắm--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <!--End Bathroom Filter-->
+                    <!--Price min Filter-->
+                    <select name="Price_Min" class="dropdown col-md-12 component_filter">
+                        <option value="0" selected>--Chọn Giá Tối Thiểu--</option>
+                        <option value="10000">10000</option>
+                        <option value="30000">30000</option>
+                        <option value="50000">50000</option>
+                        <option value="70000">70000</option>
+                        <option value="100000">100000</option>
+                    </select>
+                    <!--End price min filter-->
+                    <!--Price max Filter-->
+                    <select name="Price_Max" class="dropdown col-md-12 component_filter">
+                        <option value="0" selected>--Chọn Giá Tối Đa--</option>
+                        <option value="200000">200000</option>
+                        <option value="400000">400000</option>
+                        <option value="600000">600000</option>
+                        <option value="800000">800000</option>
+                        <option value="1000000">1000000</option>
+                    </select>
+                    <!--End Price max Filter-->
+
+                    <div>
+                        <button class="btn btn-primary" id="btnfilter" style="margin-top:20px"> Filter</button>
+                    </div>
+                </div>
+                <!--End Filter Boby-->
+            </div>
+            <!--End Filter Quan-->
+        </div>
+
+    </form>
+    <!--End Filter-->
+
+</div>
+@if (TempData["messagefilter"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@(TempData["messagefilter"] as string)");
+        };
+    </script>
+}
+
+<script src="~/Scripts/jquery.twbsPagination.js"></script>
+<script src="~/Scripts/jquery.twbsPagination.min.js"></script>

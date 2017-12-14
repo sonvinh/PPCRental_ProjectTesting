@@ -1,0 +1,59 @@
+﻿@model PPCRental_Project.Models.PROPERTY
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="detail-header">
+    <p>Chi tiết dự án</p>
+    <p>@Html.DisplayFor(model => model.PropertyName)</p>
+</div>
+<div class="container-fluid">
+    <img class="img-rounded img-responsive img-decorate wow fadeIn" src="@Url.Content(Model.Avatar)" />
+</div>
+<div>
+    <hr />
+    <div class="container">
+        <div class="col-md-3 wow slideInLeft">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Thông tin dự án</div>
+                <div class="panel-body">
+                    <p>Loại dự án: @Html.DisplayFor(model => model.PROPERTY_TYPE.CodeType)</p>
+                    <p>Quận: @Html.DisplayFor(model => model.DISTRICT.DistrictName)</p>
+                    <p>Phường: @Html.DisplayFor(model => model.WARD.WardName)</p>
+                    <p>Đường: @Html.DisplayFor(model => model.STREET.StreetName)</p>
+                    <p>Diện tích: @Html.DisplayFor(model => model.Area)</p>
+                    <p>Số phòng ngủ: @Html.DisplayFor(model => model.BedRoom)</p>
+                    <p>Số phòng tắm: @Html.DisplayFor(model => model.BathRoom)</p>
+                    <p>Bãi giữ xe: @Html.DisplayFor(model => model.PackingPlace)</p>
+                    <hr />
+                    <p>Price: @Html.DisplayFor(model => model.Price) @Html.DisplayFor(model => model.UnitPrice)</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9 wow slideInRight">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Mô tả dự án</div>
+                <div class="panel-body" id="project-description">
+                    @Html.DisplayFor(model => model.Content)
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="panel panel-primary wow rotateIn">
+            <div class="panel-heading">Thông tin tác giả</div>
+            <div class="panel-body">
+                <p>Email: @Html.DisplayFor(model => model.USER.Email)</p>
+                <p>Create At: @Html.DisplayFor(model => model.Created_at)</p>
+                <p>Create Post: @Html.DisplayFor(model => model.Create_post)</p>
+                <p>Update At: @Html.DisplayFor(model => model.Updated_at)</p>
+                <p>Status Name: @Html.DisplayFor(model => model.PROJECT_STATUS.Status_Name)</p>
+                <p>Note: @Html.DisplayFor(model => model.Note)</p>
+            </div>
+        </div>
+    </div>
+
+</div>

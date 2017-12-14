@@ -1,0 +1,33 @@
+/*
+Theme Name: vpwtheme
+Theme URI: http://giacongseo.vn
+Author: giacongseo
+Author URI: http://vinhphucweb.com
+Description: Description
+Version: 1.0.0
+Text Domain: http://giacongseo.vn
+Email : thuong.ctcompany@gmail.com
+Tags:vpwtheme
+
+--------------------------------------------------------------*/
+*{
+	padding: 0px;
+	margin: 0px
+}
+#wpadminbar{
+    display: none;
+}
+html[lang="vi"]{
+    margin-top: 0px !important
+}
+.down.up.anchored{
+    background-image:url(images/arrow_up.png) !important;
+}
+.down.anchored{
+    background-image:url(images/arrow_dow.png) !important;
+}
+
+.stran{
+    background:url(images/trans3.png) 0 0 repeat;
+    padding:20px 10px 20px 10px;
+}

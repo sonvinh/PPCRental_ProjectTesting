@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPCRental_Project", "PPCRental_Project\PPCRental_Project.csproj", "{4E0753E5-7FFF-4F3C-952F-5F0373D11D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPCRental_Project.AcceptanceTests", "PPCRental_Project.AcceptanceTests\PPCRental_Project.AcceptanceTests.csproj", "{8BA3823C-888C-4BA0-887D-1050F6C5E2E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPCRental_Project.AcceptanceTests.Common", "PPCRental_Project.AcceptanceTests.Common\PPCRental_Project.AcceptanceTests.Common.csproj", "{312540EF-0F99-471E-ADB7-281F68665346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPCRental_Project.UITests.Selenium", "PPCRental_Project.UITests.Selenium\PPCRental_Project.UITests.Selenium.csproj", "{41E92DC4-A7ED-4FA8-85E7-B71168639299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPCRental_Project.UnitTests", "PPCRental_Project.UnitTests\PPCRental_Project.UnitTests.csproj", "{9ED3C737-9DFC-4E47-AEE6-3B4B808C81B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1287C2E8-B05B-43A4-8EC0-918CDDC9EC5C}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E0753E5-7FFF-4F3C-952F-5F0373D11D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0753E5-7FFF-4F3C-952F-5F0373D11D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E0753E5-7FFF-4F3C-952F-5F0373D11D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E0753E5-7FFF-4F3C-952F-5F0373D11D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BA3823C-888C-4BA0-887D-1050F6C5E2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA3823C-888C-4BA0-887D-1050F6C5E2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA3823C-888C-4BA0-887D-1050F6C5E2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA3823C-888C-4BA0-887D-1050F6C5E2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312540EF-0F99-471E-ADB7-281F68665346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312540EF-0F99-471E-ADB7-281F68665346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312540EF-0F99-471E-ADB7-281F68665346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312540EF-0F99-471E-ADB7-281F68665346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41E92DC4-A7ED-4FA8-85E7-B71168639299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41E92DC4-A7ED-4FA8-85E7-B71168639299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41E92DC4-A7ED-4FA8-85E7-B71168639299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41E92DC4-A7ED-4FA8-85E7-B71168639299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED3C737-9DFC-4E47-AEE6-3B4B808C81B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED3C737-9DFC-4E47-AEE6-3B4B808C81B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED3C737-9DFC-4E47-AEE6-3B4B808C81B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED3C737-9DFC-4E47-AEE6-3B4B808C81B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

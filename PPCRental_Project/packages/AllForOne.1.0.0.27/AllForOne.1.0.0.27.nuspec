@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AllForOne</id>
+    <version>1.0.0.27</version>
+    <title>AllForOne</title>
+    <authors>Holf</authors>
+    <owners>Holf</owners>
+    <licenseUrl>https://github.com/Holf/AllForOne/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Holf/AllForOne</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AllForOne ensures that child processes which are started by your application end when your application ends.
+	
+	Say goodbye to pesky hanging processes on your Build Server.</description>
+    <summary />
+    <language>en-UK</language>
+  </metadata>
+</package>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<PPCRental_Project.Models.PROPERTY>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    if (Session["UserID"] == null)
+    {
+        Response.Redirect("~/Admin/Account/Login");
+    }
+    else
+    {
+        if (Session["UserRole"].ToString().Equals("1"))
+        {
+            Response.Redirect("~/Home/Error");
+        }
+    }
+}
+
+<h2>Welcome @Session["Fullname"]</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Data Table Example
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>PropertyName</th>
+                        <th>Avatar</th>
+                        <th>Area</th>
+                        <th>DistrictName</th>
+                        <th>StreetName</th>
+                        <th>WardName</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.PropertyName</td>
+                            @{
+                                try
+                                {
+                                    <td><img src="@Url.Content(item.Avatar)" width="100px"></td>
+
+                                }
+                                catch (Exception)
+                                {
+                                }
+
+                            }
+
+                            <td>@item.Area</td>
+                            <td>@item.DISTRICT.DistrictName</td>
+                            <td>@item.STREET.StreetName</td>
+                            <td>@item.WARD.WardName</td>
+                            @if (item.Status_ID == 1) 
+                            {
+                                ViewBag.status = "Chưa duyệt";
+                            }
+                            else if (item.Status_ID == 3) 
+                            {
+                                ViewBag.status = "Đã duyệt";
+                            }
+                            else if (item.Status_ID == 4) 
+                            {
+                                ViewBag.status = "Hết hạn";
+                            }
+                            <td>@ViewBag.status</td>
+                            <td>
+                                
+                                <a href="~/Admin/PropertyAdmin/Details/@item.ID"><span class="glyphicon glyphicon-list-alt"></span></a><br />
+                                <a href="~/Admin/PropertyAdmin/Edit/@item.ID"><span class="glyphicon glyphicon-pencil"></span></a><br />
+                                <a href="~/Admin/PropertyAdmin/DeleteConfirm/@item.ID"><span class="glyphicon glyphicon-remove"></span></a>
+                            </td>
+                        </tr>
+                     }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

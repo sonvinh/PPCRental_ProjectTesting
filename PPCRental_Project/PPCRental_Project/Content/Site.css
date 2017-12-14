@@ -1,0 +1,151 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Lora', serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    margin-bottom: 20px;
+    margin-top:20px;
+    max-width: 280px;
+    height : 25px;
+    width: 180px;
+}
+select
+{
+    width : 180px;
+    margin-top:20px;
+    height:25px;
+}
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*************************************************************************/
+                                    /*My Style*/
+/*************************************************************************/
+#district_filter
+{
+  
+}
+#btnfilter
+{
+    width: 100%;
+}
+#detail-header
+{
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 30px;
+}
+#project-description
+{
+    height: 331px;
+}
+#viewandfilter
+{
+    margin-top:15px;
+}
+#btn-detail {
+    margin-left: 25%;
+}
+
+
+.caret_center
+{
+    margin-top: 10px;
+}
+.component_filter
+{
+    margin-bottom: 10px;
+}
+.projectcomponent
+{
+    height: 450px;
+    margin-bottom: 10px;
+}
+
+.projectcomponent1
+{
+    height: 500px;
+    margin-bottom: 10px;
+}
+
+.img-decorate
+{
+     box-shadow: 5px 5px 5px #888888;
+     margin: 0 auto;
+}
+.thumbnail-title {
+    height: 40px;
+    /*background-color: green;*/
+    margin-bottom: 3px;
+    font-weight: bold;
+    color: 	#ff3333;
+}
+
+.thumbnail-content {
+    height: 180px;
+    /*background-color: red;*/
+    margin-bottom: 3px;
+}
+
+.thumbnail-footer {
+    height: 37px;
+    /*background-color: pink;*/
+}
+
+.display-price
+{
+    font-size: 18px;
+    height: 25px;
+    font-weight:bold;
+    color: rgba(255, 102, 0, 0.5);
+}
+
+.display-content
+{
+    height: 80px;
+    color: 	#80aaff;
+}
+.display-img
+{
+    max-height:160px;
+}
+

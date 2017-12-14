@@ -1,0 +1,243 @@
+﻿@model PPCRental_Project.Models.PROPERTY
+
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    if (Session["UserID"] == null)
+    {
+        Response.Redirect("~/Admin/Account/Login");
+    }
+    else
+    {
+        if (Session["UserRole"].ToString().Equals("1"))
+        {
+            Response.Redirect("~/Home/Error");
+        }
+    }
+}
+
+<h2 style="text-align:center">Edit</h2>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+@using (Html.BeginForm("Edit", "PropertyAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" >
+        <h4 style="text-align:center">PROPERTY</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="col-xs-6" style=" margin-left: 165px; height: 425px; width: 380px;">
+            <div class="form-group">
+                @Html.LabelFor(model => model.PropertyName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                    @Html.EditorFor(model => model.PropertyName, new { @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.PropertyName)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PropertyType_ID, "PropertyType", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                        @Html.DropDownList("PropertyType_ID",  new SelectList(ViewBag.property_type, "ID", "CodeType", Model.PROPERTY_TYPE))
+                        @Html.ValidationMessageFor(model => model.PropertyType_ID)
+                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                    @Html.EditorFor(model => model.Content, new { @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.Content)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.District_ID, "District", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                    @Html.DropDownList("District_ID", new SelectList(ViewBag.District, "ID", "DistrictName", Model.DISTRICT), new { @Styles = "width: 175px; height: 25px;" })
+                    @Html.ValidationMessageFor(model => model.District_ID)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Ward_ID, "Ward", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                    @Html.DropDownList("Ward_ID", new SelectList(ViewBag.WardName, "ID", "WardName", Model.WARD), new { @Styles = "width: 175px; height: 25px;" })
+                    @Html.ValidationMessageFor(model => model.Ward_ID)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Street_ID, "Street", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                        @Html.DropDownList("Street_ID", new SelectList(ViewBag.StreetName, "ID", "StreetName", Model.STREET), new { @Styles = "width: 175px; height: 25px;" })
+                        @Html.ValidationMessageFor(model => model.Street_ID)              
+                    </div>
+            </div>
+            
+            
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; margin-left: 50px;">
+                    @Html.TextBoxFor(model => model.Price, new { type = "number", min = 0, @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+            </div>
+            
+            <div class="form-group"  >
+                @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10"  >
+                    <div  style="margin-left: 50px;">
+                    <img src="@Url.Content(Model.Avatar)" width="100px">
+                    </div>
+                    <div style="margin-left: 50px;">
+                        <input type="file" name="ImageFile" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Images, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*<img src="@Url.Content(Model.Avatar)" width="100px">*@
+                    <div style="margin-left: 50px;">
+                        @if (Model.Images != null)
+                        {
+                            string[] chuoi = Model.Images.Split(',');
+                            for (int i = 0; i < chuoi.Count() - 1; i++)
+                            {
+                                <img src="@Url.Content(@chuoi[i])" width="100px" alt="@Model.Images" />
+                            }
+                        }
+                    </div>
+                    <div style="margin-left: 50px;">
+                        <input type="file" name="ImageFile2" multiple />                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ********-->
+        <div class="col-xs-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px; ">
+                    @Html.EditorFor(model => model.UnitPrice, new { @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.UnitPrice)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style=" width: 230px;">
+                    @Html.EditorFor(model => model.Area, new { @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.Area)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BedRoom, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.BedRoom, new { type = "number", min = 0, max=15, @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.BedRoom)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BathRoom, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.BathRoom, new { type = "number", min = 0, max = 15, @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.BathRoom)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PackingPlace, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.PackingPlace, new { type = "number", min = 0, max = 15, @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.PackingPlace)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID, "UserID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                        @Html.DropDownList("UserID", new SelectList(ViewBag.UserName, "ID", "FullName", Model.USER), new { @disabled = "disabled", @Styles = "width: 175px; height: 25px;"})
+                        @Html.ValidationMessageFor(model => model.UserID)
+                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Created_at, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Created_at, new { @disabled = "disabled", @class = "shapestyle"})
+                    @Html.ValidationMessageFor(model => model.Created_at)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Create_post, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Create_post, new { @disabled = "disabled",@class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.Create_post)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status_ID, "Status_ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                        @Html.DropDownList("Status_ID", new SelectList(ViewBag.ProJectStatus, "ID", "Status_Name", Model.PROJECT_STATUS))
+                        @Html.ValidationMessageFor(model => model.Status_ID)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Note, new { @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.Note)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Updated_at, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Updated_at, new { @disabled = "disabled", @class = "shapestyle" })
+                    @Html.ValidationMessageFor(model => model.Updated_at)
+                </div>
+            </div>
+            
+        </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-secondary btn-shape" style="font-weight: bold;" />
+            </div>
+        </div>
+     </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Srcipts{
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+    <script>
+        $('#Ward_ID').select2();
+        $('#District_ID').select2({ dropdownAutoWidth: true });
+        $('#Street_ID').select2();
+        $('#District_ID').on('change', function () {
+            $('#Street_ID').empty();
+            $('#Ward_ID').empty();
+            $.getJSON('/PropertyAdmin/GetStreet?District_id=' + $('#District_ID').val(),
+                function (json) {
+                    $('#Street_ID').select2({ data: json });
+
+                });
+            $.getJSON('/PropertyAdmin/GetWard?District_id=' + $('#District_ID').val(),
+                function (json) {
+                    $('#Ward_ID').select2({ data: json });
+                });
+        });
+    </script>
+}
+
+
