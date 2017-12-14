@@ -60,3 +60,34 @@ C:\Users\vienthong\Desktop\ProjectForTesting\ProjectGIt\PPCRental_Project\PPCRen
 C:\Users\vienthong\Desktop\ProjectForTesting\ProjectGIt\PPCRental_Project\PPCRental_Project\obj\Debug\PPCRental_Project.csprojResolveAssemblyReference.cache
 C:\Users\vienthong\Desktop\ProjectForTesting\ProjectGIt\PPCRental_Project\PPCRental_Project\obj\Debug\PPCRental_Project.dll
 C:\Users\vienthong\Desktop\ProjectForTesting\ProjectGIt\PPCRental_Project\PPCRental_Project\obj\Debug\PPCRental_Project.pdb
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\PPCRental_Project.dll.config
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\PPCRental_Project.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\PPCRental_Project.pdb
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\Antlr3.Runtime.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\EntityFramework.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\EntityFramework.SqlServer.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\Holf.AllForOne.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\Microsoft.Web.Infrastructure.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\Newtonsoft.Json.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Helpers.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Mvc.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Optimization.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Razor.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.WebPages.Deployment.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.WebPages.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.WebPages.Razor.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\WebGrease.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\EntityFramework.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\EntityFramework.SqlServer.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Helpers.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Mvc.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Razor.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.WebPages.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.WebPages.Deployment.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.WebPages.Razor.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\System.Web.Optimization.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\Newtonsoft.Json.xml
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\bin\Antlr3.Runtime.pdb
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\obj\Debug\PPCRental_Project.csprojResolveAssemblyReference.cache
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\obj\Debug\PPCRental_Project.dll
+F:\Phim of Heo moi\movie\testing\New folder\PPCRental_Project\PPCRental_Project\obj\Debug\PPCRental_Project.pdb

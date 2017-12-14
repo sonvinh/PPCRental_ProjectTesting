@@ -115,6 +115,11 @@
     <Compile Include="Drivers\Project\ProjectDriver.cs" />
     <Compile Include="Drivers\Project\SearchDriver.cs" />
     <Compile Include="Drivers\Project\SearchResultState.cs" />
+    <Compile Include="Feature\FiterProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiterProject.feature</DependentUpon>
+    </Compile>
     <Compile Include="Feature\ViewDetailProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +131,7 @@
       <DependentUpon>ViewListOfProject.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\FilterProjectSteps.cs" />
     <Compile Include="Steps\InsertDriver.cs" />
     <Compile Include="Steps\ViewDetailSteps.cs" />
     <Compile Include="Steps\ViewListOfProject.cs" />
@@ -137,6 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Feature\FiterProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiterProject.feature.cs</LastGenOutput>
+    </None>
     <None Include="Feature\ViewDetailProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ViewDetailProject.feature.cs</LastGenOutput>

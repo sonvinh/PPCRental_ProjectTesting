@@ -36,6 +36,12 @@ namespace PPCRental_Project.AcceptanceTests.Drivers.Project
            
         }
 
+        public void Search(int searchTerm) 
+        {
+            var controller = new ProjectController();
+            _result.ActionResult = controller.Search(searchTerm,0,0,0,0,0);
+        }
+
         public void ListPro()
         {
             var controllerIndex = new AccountController();
