@@ -115,6 +115,11 @@
     <Compile Include="Drivers\Project\ProjectDriver.cs" />
     <Compile Include="Drivers\Project\SearchDriver.cs" />
     <Compile Include="Drivers\Project\SearchResultState.cs" />
+    <Compile Include="Feature\ViewDetailProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewDetailProject.feature</DependentUpon>
+    </Compile>
     <Compile Include="Feature\ViewListOfProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,6 +127,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\InsertDriver.cs" />
+    <Compile Include="Steps\ViewDetailSteps.cs" />
     <Compile Include="Steps\ViewListOfProject.cs" />
     <Compile Include="Support\ActionResultExtensions.cs" />
     <Compile Include="Support\CatalogContext.cs" />
@@ -131,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Feature\ViewDetailProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ViewDetailProject.feature.cs</LastGenOutput>
+    </None>
     <None Include="Feature\ViewListOfProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ViewListOfProject.feature.cs</LastGenOutput>
