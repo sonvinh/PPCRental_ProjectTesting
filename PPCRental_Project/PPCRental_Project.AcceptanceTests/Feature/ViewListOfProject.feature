@@ -11,7 +11,7 @@ Background:
 	| PIS Serviced Apartment – Style               | DSC_4173-watermark.jpg							| a - Copy17095239.jpg,images (1) - Copy17095242.jpg,images17095242.jpg,			   | 3            | The well equipped kitchen is opened on a cozy living room and a dining area with table and chairs..		     | 749			  | 4		    | 2		    | 30000  | VND       | 130m2 | 2       | 3        | 1            | 4      | 2017-11-09 | 2017-11-09  | 3      | Done | 2017-11-23 | 3       |
 	| Vinhomes Central Park L2 – Duong’s Apartment | galaxy-9-3-watermark-1.jpg                          | images1702244617042862.jpg,                                                     | 2            | Vinhomes Central Park is a new development that is in the heart of everything that Ho Chi Minh has to offer. | 755			  | 33			| 3			| 110000 | VND       | 150m2 | 4       | 2        | 1            | 1      | 2017-11-09 | 2017-11-09  | 3      | Done | 2017-11-23 | 3       |
 	| Saigon Pearl Ruby Block                      | DSC_7895-watermark.jpg                          | images17423697317334243.jpg,PIS_4622-Edit17463610217334244.jpg,                     | 1			  | Studio apartment at central of CBD, nearby Ben Thanh market, Bui Vien Backpacker Area, 23/9 park…		     | 758			  | 35	        | 3			| 30000  | VND       | 130m2 | 3       | 5        | 1            | 4      | 2017-11-09 | 2017-11-09  | 3      | Done | 2017-11-23 | 2       |
-		
+	
 
 Scenario: ViewListofProject
 	When I input 'lythihuyenchau@gmail.com' and '123456' into Login page
